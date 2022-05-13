@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<AutoCount_x0020_Plug-in_x0020_Package_x0020_Project>
+  <Properties>
+    <ProjectFileVersion>1.0</ProjectFileVersion>
+    <Guid>49e13134-cc01-4a2e-82e2-cd09de71e961</Guid>
+    <Name>Daxonet.BintangPackaging.CommissionReport</Name>
+    <Version>1.0</Version>
+    <Manufacturer>Credential Daxonet Solutions Sdn Bhd</Manufacturer>
+    <ManufacturerUrl>www.daxonet.com</ManufacturerUrl>
+    <Copyright>Copyright 2014 © Credential Daxonet Solutions Sdn Bhd</Copyright>
+    <SalesPhone>0163860090</SalesPhone>
+    <SupportPhone>0163860090</SupportPhone>
+    <Description>Daxonet.BintangPackaging.CommissionReport</Description>
+    <WhatsNew />
+    <AssemblyFile>Daxonet.BintangPackaging.CommissionReport.dll</AssemblyFile>
+    <MinimumAccountingVersion>2.0.0.55</MinimumAccountingVersion>
+    <ScriptLanguage>C#</ScriptLanguage>
+  </Properties>
+  <Files>
+    <Filename>Daxonet.BintangPackaging.CommissionReport.dll</Filename>
+    <ExecuteAfterExtracted>false</ExecuteAfterExtracted>
+  </Files>
+  <Files>
+    <Filename>Daxonet.BintangPackaging.CommissionReport.pdb</Filename>
+    <ExecuteAfterExtracted>false</ExecuteAfterExtracted>
+  </Files>
+  <Files>
+    <Filename>Daxonet.Autocount.Plugin.Licensing.dll</Filename>
+    <ExecuteAfterExtracted>false</ExecuteAfterExtracted>
+  </Files>
+  <Files>
+    <Filename>Licensing.Net.dll</Filename>
+    <ExecuteAfterExtracted>false</ExecuteAfterExtracted>
+  </Files>
+</AutoCount_x0020_Plug-in_x0020_Package_x0020_Project>

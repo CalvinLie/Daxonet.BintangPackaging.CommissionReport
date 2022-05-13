@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49E13134-CC01-4A2E-82E2-CD09DE71E961}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Daxonet.BintangPackaging.CommissionReport</RootNamespace>
+    <AssemblyName>Daxonet.BintangPackaging.CommissionReport</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoCountInstallPath>C:\Program Files (x86)\AutoCount\Accounting 2.0</AutoCountInstallPath>
+    <AutoCountSDKInstallPath>C:\Program Files (x86)\AutoCount\Development\AppBuilder 2.0</AutoCountSDKInstallPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoCount, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Accounting, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Accounting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Accounting.UI, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Accounting.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.ARAP, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.ARAP.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.BusinessFlow, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.BusinessFlow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.GeneralMaint, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.GeneralMaint.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.GL, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.GL.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.GL.FinancialReport, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.GL.FinancialReport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.GST, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.GST.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image100p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image100p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image125p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image125p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image150p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image150p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image175p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image175p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image200p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image200p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Image500p, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Image500p.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Images, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Images.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.ImportExport, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.ImportExport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Inquiry, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Inquiry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Invoicing, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Invoicing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Invoicing.Purchase, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Invoicing.Purchase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Invoicing.Sales, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Invoicing.Sales.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.MainEntry, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.MainEntry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.MainEntry.XmlSerializers, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.MainEntry.XmlSerializers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.ManageAccountBook, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.ManageAccountBook.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.ManagementStudio, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.ManagementStudio.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Manufacturing, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Manufacturing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.StartScreen, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.StartScreen.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Stock, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Stock.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.StockMaint, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.StockMaint.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Tools, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Tools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.Tools.DataUpgrade, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.Tools.DataUpgrade.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.UI, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AutoCount.UI.XmlSerializers, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autocount2.0.References.2.0.27-v2.2.34-rev193\lib\AutoCount.UI.XmlSerializers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Daxonet.Autocount.Plugin.Licensing, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Daxonet.Autocount2.0.Plugin.Licensing.1.0.1\lib\Daxonet.Autocount.Plugin.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.BonusSkins.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Charts.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.CodeParser.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Data.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.DataAccess.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v19.2.UI, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.DataAccess.v19.2.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Diagram.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Docs.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Images.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Office.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Pdf.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.2.Drawing, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Pdf.v19.2.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.PivotGrid.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Printing.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.RichEdit.v19.2.Export.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Snap.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Sparkline.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Spreadsheet.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Utils.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Utils.v19.2.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Xpo.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraBars.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraCharts.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.Extensions, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraCharts.v19.2.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraCharts.v19.2.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraCharts.v19.2.Wizard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraDiagram.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraEditors.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraGauges.v19.2.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraGrid.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraLayout.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraNavBar.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraPivotGrid.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraPrinting.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraReports.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraReports.v19.2.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraRichEdit.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraTreeList.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraVerticalGrid.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v19.2, Version=19.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraWizard.v19.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Licensing.Net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6b789b4f1459fe6f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Daxonet.Autocount2.0.Plugin.Licensing.1.0.1\lib\Licensing.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APScripts\APCNCommandFormScript.cs" />
+    <Compile Include="APScripts\APCNListingScript.cs" />
+    <Compile Include="APScripts\APCNScript.cs" />
+    <Compile Include="APScripts\APDepositCommandFormScript.cs" />
+    <Compile Include="APScripts\APDepositListingScript.cs" />
+    <Compile Include="APScripts\APDepositScript.cs" />
+    <Compile Include="APScripts\APDNCommandFormScript.cs" />
+    <Compile Include="APScripts\APDNListingScript.cs" />
+    <Compile Include="APScripts\APDNScript.cs" />
+    <Compile Include="APScripts\APInvoiceCommandFormScript.cs" />
+    <Compile Include="APScripts\APInvoiceListingScript.cs" />
+    <Compile Include="APScripts\APInvoiceScript.cs" />
+    <Compile Include="APScripts\APPaymentCommandFormScript.cs" />
+    <Compile Include="APScripts\APPaymentListingScript.cs" />
+    <Compile Include="APScripts\APPaymentScript.cs" />
+    <Compile Include="APScripts\APRefundCommandFormScript.cs" />
+    <Compile Include="APScripts\APRefundListingScript.cs" />
+    <Compile Include="APScripts\APRefundScript.cs" />
+    <Compile Include="APScripts\CreditorCommandFormScript.cs" />
+    <Compile Include="APScripts\CreditorScript.cs" />
+    <Compile Include="APScripts\Report\APAnalysisByDocumentScript.cs" />
+    <Compile Include="APScripts\Report\CreditorAgingByAgentScript.cs" />
+    <Compile Include="APScripts\Report\CreditorAgingScript.cs" />
+    <Compile Include="APScripts\Report\CreditorStatementScript.cs" />
+    <Compile Include="APScripts\Report\OutstandingAPDepositScript.cs" />
+    <Compile Include="APScripts\Report\OutstandingAPInvoiceScript.cs" />
+    <Compile Include="APScripts\SimpleAPPaymentScript.cs" />
+    <Compile Include="ARScripts\ARCNCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARCNListingScript.cs" />
+    <Compile Include="ARScripts\ARCNScript.cs" />
+    <Compile Include="ARScripts\ARDepositCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARDepositListingScript.cs" />
+    <Compile Include="ARScripts\ARDepositScript.cs" />
+    <Compile Include="ARScripts\ARDNCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARDNListingScript.cs" />
+    <Compile Include="ARScripts\ARDNScript.cs" />
+    <Compile Include="ARScripts\ARInvoiceCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARInvoiceListingScript.cs" />
+    <Compile Include="ARScripts\ARInvoiceScript.cs" />
+    <Compile Include="ARScripts\ARPaymentCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARPaymentListingScript.cs" />
+    <Compile Include="ARScripts\ARPaymentScript.cs" />
+    <Compile Include="ARScripts\ARRefundCommandFormScript.cs" />
+    <Compile Include="ARScripts\ARRefundListingScript.cs" />
+    <Compile Include="ARScripts\ARRefundScript.cs" />
+    <Compile Include="ARScripts\ContraCommandFormScript.cs" />
+    <Compile Include="ARScripts\ContraListingScript.cs" />
+    <Compile Include="ARScripts\ContraScript.cs" />
+    <Compile Include="ARScripts\DebtorCommandFormScript.cs" />
+    <Compile Include="ARScripts\DebtorScript.cs" />
+    <Compile Include="ARScripts\Report\ARAnalysisByDocumentScript.cs" />
+    <Compile Include="ARScripts\Report\CommissionByCollection.cs" />
+    <Compile Include="ARScripts\Report\DebtorAgingByAgentScript.cs" />
+    <Compile Include="ARScripts\Report\DebtorAgingScript.cs" />
+    <Compile Include="ARScripts\Report\DebtorStatementScript.cs" />
+    <Compile Include="ARScripts\Report\OutstandingARDepositScript.cs" />
+    <Compile Include="ARScripts\Report\OutstandingARInvoiceScript.cs" />
+    <Compile Include="ARScripts\Report\OverdueLetterScript.cs" />
+    <Compile Include="ARScripts\SimpleARPaymentScript.cs" />
+    <Compile Include="DBSetup.cs" />
+    <Compile Include="GLScripts\BankRecon\BankReconCommandFormScript.cs" />
+    <Compile Include="GLScripts\BankRecon\BankReconEditFormScript.cs" />
+    <Compile Include="GLScripts\BankRecon\BankReconScript.cs" />
+    <Compile Include="GLScripts\CashBook\CashBookCommandFormScript.cs" />
+    <Compile Include="GLScripts\CashBook\CashBookEditFormScript.cs" />
+    <Compile Include="GLScripts\CashBook\CashBookListingScript.cs" />
+    <Compile Include="GLScripts\CashBook\CashBookScript.cs" />
+    <Compile Include="GLScripts\ChequeListingScript.cs" />
+    <Compile Include="GLScripts\JournalEntry\JournalEntryCommandFormScript.cs" />
+    <Compile Include="GLScripts\JournalEntry\JournalEntryEditFormScript.cs" />
+    <Compile Include="GLScripts\JournalEntry\JournalEntryListingScript.cs" />
+    <Compile Include="GLScripts\JournalEntry\JournalEntryScript.cs" />
+    <Compile Include="GLScripts\LedgerScript.cs" />
+    <Compile Include="GLScripts\ReturnedChequeListingScript.cs" />
+    <Compile Include="GST Scripts\TaxTypeScript.cs" />
+    <Compile Include="InquiryScripts\AccountInquiryScript.cs" />
+    <Compile Include="InquiryScripts\BackOrderByUOMScript.cs" />
+    <Compile Include="InquiryScripts\BackOrderScript.cs" />
+    <Compile Include="InquiryScripts\ItemBatchBalanceByLocationScript.cs" />
+    <Compile Include="InquiryScripts\ItemBatchBalanceScript.cs" />
+    <Compile Include="InquiryScripts\PricingScript.cs" />
+    <Compile Include="InquiryScripts\StockImageInfoScript.cs" />
+    <Compile Include="InquiryScripts\StockImageScript.cs" />
+    <Compile Include="InquiryScripts\StockItemInquiryScript.cs" />
+    <Compile Include="InquiryScripts\StockItemReplacementScript.cs" />
+    <Compile Include="InquiryScripts\StockLevelByUOMScript.cs" />
+    <Compile Include="InquiryScripts\StockLevelScript.cs" />
+    <Compile Include="InquiryScripts\UCInquiryCSGNScript.cs" />
+    <Compile Include="InquiryScripts\UCInquiryScript.cs" />
+    <Compile Include="InquiryScripts\UCInquiryStockScript.cs" />
+    <Compile Include="InquiryScripts\UCStockImageScript.cs" />
+    <Compile Include="InquiryScripts\UTDCostingScript.cs" />
+    <Compile Include="InvoicingScripts\ApproveCreditControlScript.cs" />
+    <Compile Include="InvoicingScripts\ConfirmInvalidItemQtyScript.cs" />
+    <Compile Include="InvoicingScripts\ItemPackage\ItemPackageCommandFormScript.cs" />
+    <Compile Include="InvoicingScripts\ItemPackage\ItemPackageListing.cs" />
+    <Compile Include="InvoicingScripts\ItemPackage\ItemPackageScript.cs" />
+    <Compile Include="InvoicingScripts\PastRecordsEditFormScript.cs" />
+    <Compile Include="InvoicingScripts\PriceHistoryScript.cs" />
+    <Compile Include="InvoicingScripts\PurchasePriceHistoryScript.cs" />
+    <Compile Include="InvoicingScripts\SerialNoEntrySAScript.cs" />
+    <Compile Include="InvoicingScripts\SerialNoEntryScript.cs" />
+    <Compile Include="InvoicingScripts\SerialNoEntryTransferScript.cs" />
+    <Compile Include="MaintenanceScripts\AccountantMaintenanceScript.cs" />
+    <Compile Include="MaintenanceScripts\AddressScript.cs" />
+    <Compile Include="MaintenanceScripts\AreaScript.cs" />
+    <Compile Include="MaintenanceScripts\CNTypeScript.cs" />
+    <Compile Include="MaintenanceScripts\CreditorTypeScript.cs" />
+    <Compile Include="MaintenanceScripts\CurrencyRateScript.cs" />
+    <Compile Include="MaintenanceScripts\CurrencyScript.cs" />
+    <Compile Include="MaintenanceScripts\DebtorTypeScript.cs" />
+    <Compile Include="MaintenanceScripts\DepartmentScript.cs" />
+    <Compile Include="MaintenanceScripts\DNTypeScript.cs" />
+    <Compile Include="MaintenanceScripts\JournalTypeScript.cs" />
+    <Compile Include="MaintenanceScripts\MemberCommandFormScript.cs" />
+    <Compile Include="MaintenanceScripts\MemberScript.cs" />
+    <Compile Include="MaintenanceScripts\PaymentMethodScript.cs" />
+    <Compile Include="MaintenanceScripts\PostingAccountGroupScript.cs" />
+    <Compile Include="MaintenanceScripts\PriceCategoryScript.cs" />
+    <Compile Include="MaintenanceScripts\ProjectScript.cs" />
+    <Compile Include="MaintenanceScripts\PurchaseAgentScript.cs" />
+    <Compile Include="MaintenanceScripts\SalesAgentEditForm.cs" />
+    <Compile Include="MaintenanceScripts\SalesAgentScript.cs" />
+    <Compile Include="MaintenanceScripts\ShippingMethodScript.cs" />
+    <Compile Include="MaintenanceScripts\WithholdingTaxScript.cs" />
+    <Compile Include="ManufacturingScripts\CheckBOMMaterialScript.cs" />
+    <Compile Include="ManufacturingScripts\BOMOptional\BOMOptionalCommandFormScript.cs" />
+    <Compile Include="ManufacturingScripts\BOMOptional\BOMOptionalScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssemblyOrder\StockAssemblyOrderCommandFormScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssemblyOrder\StockAssemblyOrderDetailListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssemblyOrder\StockAssemblyOrderEditFormScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssemblyOrder\StockAssemblyOrderListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssemblyOrder\StockAssemblyOrderScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssembly\StockAssemblyCommandFormScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssembly\StockAssemblyDetailListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssembly\StockAssemblyEditFormScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssembly\StockAssemblyListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockAssembly\StockAssemblyScript.cs" />
+    <Compile Include="ManufacturingScripts\StockDisassembly\StockDisassemblyCommandFormScript.cs" />
+    <Compile Include="ManufacturingScripts\StockDisassembly\StockDisassemblyDetailListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockDisassembly\StockDisassemblyListingScript.cs" />
+    <Compile Include="ManufacturingScripts\StockDisassembly\StockDisassemblyScript.cs" />
+    <Compile Include="OtherScripts\DecimalSettingScript.cs" />
+    <Compile Include="OtherScripts\MainFormScript.cs" />
+    <Compile Include="OtherScripts\ReportToolScript.cs" />
+    <Compile Include="OtherScripts\ScanBarCodeControlScript.cs" />
+    <Compile Include="OtherScripts\StartupScript.cs" />
+    <Compile Include="PlugInsInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPODetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOFindScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOListingScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOScript.cs" />
+    <Compile Include="PurchaseScripts\CancelPO\CancelPOSearchScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseFindScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseListingScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseScript.cs" />
+    <Compile Include="PurchaseScripts\CashPurchase\CashPurchaseSearchScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteFindScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\GoodsReceivedNoteSearchScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\OutstandingGoodsReceivedNoteDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReceivedNote\OutstandingGoodsReceivedNoteListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnFindScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnListingScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnScript.cs" />
+    <Compile Include="PurchaseScripts\GoodsReturn\GoodsReturnSearchScript.cs" />
+    <Compile Include="PurchaseScripts\MonthlyPurchaseAnalysisScript.cs" />
+    <Compile Include="PurchaseScripts\MultiDimensionalPurchaseAnalysisScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseAnalysisByDocumentScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceFindScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseInvoice\PurchaseInvoiceSearchScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\OutstandingPurchaseOrderDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\OutstandingPurchaseOrderListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderFindScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseOrder\PurchaseOrderSearchScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestFindScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseRequest\PurchaseRequestSearchScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnFindScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnListingScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnScript.cs" />
+    <Compile Include="PurchaseScripts\PurchaseReturn\PurchaseReturnSearchScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\OutstandingRequestQuotationDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\OutstandingRequestQuotationListingScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationFindScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationListingScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationScript.cs" />
+    <Compile Include="PurchaseScripts\RequestQuotation\RequestQuotationSearchScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnFindScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignmentReturn\PurchaseConsignmentReturnSearchScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\OutstandingPurchaseConsignmentDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\OutstandingPurchaseConsignmentListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\OutstandingPurchaseConsignmentScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentCommandFormScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentDetailListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentEditFormScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentFindScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentListingScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierConsignment\PurchaseConsignmentSearchScript.cs" />
+    <Compile Include="PurchaseScripts\SupplierPriceListScript.cs" />
+    <Compile Include="PurchaseScripts\TopBottomPurchaseRankingScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentCommandFormScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentDetailListingScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentFindScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentListingScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentScript.cs" />
+    <Compile Include="SalesScripts\BonusPointAdjustment\BonusPointAdjustmentSearchScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionCommandFormScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionDetailListingScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionFindScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionListingScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionScript.cs" />
+    <Compile Include="SalesScripts\BonusPointRedemption\BonusPointRedemptionSearchScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOCommandFormScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSODetailListingScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOEditFormScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOFindScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOListingScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOScript.cs" />
+    <Compile Include="SalesScripts\CancelSO\CancelSOSearchScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleCommandFormScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleDetailListingScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleEditFormScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleFindScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleListingScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleScript.cs" />
+    <Compile Include="SalesScripts\CashSale\CashSaleSearchScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnCommandFormScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnDetailListingScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnFindScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnListingScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnScript.cs" />
+    <Compile Include="SalesScripts\ConsignmentReturn\ConsignmentReturnSearchScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentCommandFormScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentDetailListingScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentEditFormScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentFindScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentListingScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentScript.cs" />
+    <Compile Include="SalesScripts\Consignment\ConsignmentSearchScript.cs" />
+    <Compile Include="SalesScripts\Consignment\OutstandingConsignmentDetailListingScript.cs" />
+    <Compile Include="SalesScripts\Consignment\OutstandingConsignmentListingScript.cs" />
+    <Compile Include="SalesScripts\Consignment\OutstandingConsignmentScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteCommandFormScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteDetailListingScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteEditFormScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteFindScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteListingScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteScript.cs" />
+    <Compile Include="SalesScripts\CreditNote\CreditNoteSearchScript.cs" />
+    <Compile Include="SalesScripts\CustomerPriceListScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteCommandFormScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteDetailListingScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteEditFormScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteFindScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteListingScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteScript.cs" />
+    <Compile Include="SalesScripts\DebitNote\DebitNoteSearchScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderCommandFormScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderDetailListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderEditFormScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderFindScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\DeliveryOrderSearchScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\OutstandingDeliveryOrderDetailListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryOrder\OutstandingDeliveryOrderListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnCommandFormScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnDetailListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnEditFormScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnFindScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnListingScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnScript.cs" />
+    <Compile Include="SalesScripts\DeliveryReturn\DeliveryReturnSearchScript.cs" />
+    <Compile Include="SalesScripts\FocQuantityAnalysisByDocumentScript.cs" />
+    <Compile Include="SalesScripts\Invoice\Invoice2.cs" />
+    <Compile Include="SalesScripts\Invoice\Invoice2EditFormScript.cs" />
+    <Compile Include="SalesScripts\Invoice\Invoice2Script.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceCommandFormScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceDetailListingScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceEditFormScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceFindScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceListingScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceScript.cs" />
+    <Compile Include="SalesScripts\Invoice\InvoiceSearchScript.cs" />
+    <Compile Include="SalesScripts\MonthlySalesAnalysisScript.cs" />
+    <Compile Include="SalesScripts\MultiDimensionalSalesAnalysisScript.cs" />
+    <Compile Include="SalesScripts\PriceHistoryReportScript.cs" />
+    <Compile Include="SalesScripts\ProfitLossOfDocumentScript.cs" />
+    <Compile Include="SalesScripts\Quotation\OutstandingQuotationDetailListingScript.cs" />
+    <Compile Include="SalesScripts\Quotation\OutstandingQuotationListingScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationCommandFormScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationDetailListingScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationEditFormScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationFindScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationListingScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationScript.cs" />
+    <Compile Include="SalesScripts\Quotation\QuotationSearchScript.cs" />
+    <Compile Include="SalesScripts\SalesAnalysisByDocumentScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\OutstandingSalesOrderDetailListingScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderCommandFormScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderDetailListingScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderEditFormScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderFindScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderListingScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderOutstandingListingScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderScript.cs" />
+    <Compile Include="SalesScripts\SalesOrder\SalesOrderSearchScript.cs" />
+    <Compile Include="SalesScripts\SalesProfitCalculator.cs" />
+    <Compile Include="SalesScripts\TopBottomSalesRankingScript.cs" />
+    <Compile Include="StockScripts\DocumentItemTransactionListingScript.cs" />
+    <Compile Include="StockScripts\ExpiredItemBatchScript.cs" />
+    <Compile Include="StockScripts\InventoryPhysicalWorksheetByConsignmentScript.cs" />
+    <Compile Include="StockScripts\InventoryPhysicalWorksheetScript.cs" />
+    <Compile Include="StockScripts\ItemBOM\ItemBOMCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemBOM\ItemBOMEditFormScript.cs" />
+    <Compile Include="StockScripts\ItemBOM\ItemBOMScript.cs" />
+    <Compile Include="StockScripts\ItemBrand\ItemBrandCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemBrand\ItemBrandScript.cs" />
+    <Compile Include="StockScripts\ItemCategory\ItemCategoryCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemCategory\ItemCategoryScript.cs" />
+    <Compile Include="StockScripts\ItemClass\ItemClassCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemClass\ItemClassScript.cs" />
+    <Compile Include="StockScripts\ItemGroup\ItemGroupCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemGroup\ItemGroupEditFormScript.cs" />
+    <Compile Include="StockScripts\ItemGroup\ItemGroupScript.cs" />
+    <Compile Include="StockScripts\ItemProfitMarginScript.cs" />
+    <Compile Include="StockScripts\ItemType\ItemTypeCommandFormScript.cs" />
+    <Compile Include="StockScripts\ItemType\ItemTypeEditFormScript.cs" />
+    <Compile Include="StockScripts\ItemType\ItemTypeScript.cs" />
+    <Compile Include="StockScripts\Item\ItemCommand.cs" />
+    <Compile Include="StockScripts\Item\ItemDataAccessScript.cs" />
+    <Compile Include="StockScripts\Item\ItemEditFormScript.cs" />
+    <Compile Include="StockScripts\Item\ItemListingScript.cs" />
+    <Compile Include="StockScripts\Item\ItemMaintenance.cs" />
+    <Compile Include="StockScripts\Item\ItemSearch.cs" />
+    <Compile Include="StockScripts\Item\OldItemCommand.cs" />
+    <Compile Include="StockScripts\Item\OldItemDataAccessScript.cs" />
+    <Compile Include="StockScripts\Location\LocationCommandFormScript.cs" />
+    <Compile Include="StockScripts\Location\LocationEditFormScript.cs" />
+    <Compile Include="StockScripts\Location\LocationScript.cs" />
+    <Compile Include="StockScripts\PrintBarCodeScript.cs" />
+    <Compile Include="StockScripts\ReorderAdviceScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentEditFormScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentFindScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentListingScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentScript.cs" />
+    <Compile Include="StockScripts\StockAdjustment\StockAdjustmentSearchScript.cs" />
+    <Compile Include="StockScripts\StockAgingScript.cs" />
+    <Compile Include="StockScripts\StockBalanceByLocationScript.cs" />
+    <Compile Include="StockScripts\StockBalanceScript.cs" />
+    <Compile Include="StockScripts\StockCardScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueEditFormScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueFindScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueListingScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueScript.cs" />
+    <Compile Include="StockScripts\StockIssue\StockIssueSearchScript.cs" />
+    <Compile Include="StockScripts\StockMovementScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveEditFormScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveFindScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveListingScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveScript.cs" />
+    <Compile Include="StockScripts\StockReceive\StockReceiveSearchScript.cs" />
+    <Compile Include="StockScripts\StockStatusScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeFindScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeListingScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeScript.cs" />
+    <Compile Include="StockScripts\StockTake\StockTakeSearchScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferEditFormScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferFindScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferListingScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferScript.cs" />
+    <Compile Include="StockScripts\StockTransfer\StockTransferSearchScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionEditFormScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionFindScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionListingScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionScript.cs" />
+    <Compile Include="StockScripts\StockUOMConversion\StockUOMConversionSearchScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostEditFormScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostFindScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostListingScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostScript.cs" />
+    <Compile Include="StockScripts\StockUpdateCost\StockUpdateCostSearchScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffCommandFormScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffDetailListingScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffEditFormScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffFindScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffListingScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffScript.cs" />
+    <Compile Include="StockScripts\StockWriteOff\StockWriteOffSearchScript.cs" />
+    <Compile Include="_Plugin\FormCommissionMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Plugin\FormCommissionMaintenance.Designer.cs">
+      <DependentUpon>FormCommissionMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Plugin\FormIncentiveMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Plugin\FormIncentiveMaintenance.Designer.cs">
+      <DependentUpon>FormIncentiveMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Plugin\FormSalesAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Plugin\FormSalesAgent.Designer.cs">
+      <DependentUpon>FormSalesAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Plugin\NewReportType\CommissionReportCriteria.cs" />
+    <Compile Include="_Plugin\NewReportType\CommissionReportType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitlab-ci.yml" />
+    <Content Include="Daxonet.BintangPackaging.CommissionReport.appp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="_Plugin\FormCommissionMaintenance.resx">
+      <DependentUpon>FormCommissionMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Plugin\FormIncentiveMaintenance.resx">
+      <DependentUpon>FormIncentiveMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Plugin\FormSalesAgent.resx">
+      <DependentUpon>FormSalesAgent.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

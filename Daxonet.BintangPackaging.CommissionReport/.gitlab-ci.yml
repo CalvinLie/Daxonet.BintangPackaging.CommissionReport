@@ -1,0 +1,26 @@
+stages:
+  - build
+job:
+  stage: build
+  script:
+    - set CUR_YYYY=%date:~10,4%
+    - set CUR_MM=%date:~4,2%
+    - set CUR_DD=%date:~7,2%
+    - set CUR_HH=%time:~0,2%
+    - if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
+    - set CUR_NN=%time:~3,2%
+    - set CUR_SS=%time:~6,2%
+    - set CUR_MS=%time:~9,2%
+    - set SUBFILENAME=%CUR_YYYY%%CUR_MM%%CUR_DD%_%CUR_HH%%CUR_NN%%CUR_SS%
+    - echo "Restore NuGet..."
+    - C:\GitLab-Runner\nuget restore "Daxonet.BintangPackaging.CommissionReport.sln"
+    - echo "Solution Build..."
+    - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe /p:Configuration=Debug /p:Platform="Any CPU" /p:TargetFrameworkSDKToolsDirectory="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools" /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "Daxonet.BintangPackaging.CommissionReport.sln"
+    - echo "Package Build..."
+    - cd Daxonet.BintangPackaging.CommissionReport\bin\Release
+    - winrar a Daxonet.BintangPackaging.CommissionReport_%SUBFILENAME%.zip
+    - C:\"Program Files (x86)"\AutoCount\Development\"AppBuilder 2.0"\AppBuilderCmd.exe  "Daxonet.BintangPackaging.CommissionReport.appp" "Daxonet.BintangPackaging.CommissionReport_%SUBFILENAME%.app" 
+    - echo "Upload to GDrive..."
+    - C:\rclone\rclone copy Daxonet.BintangPackaging.CommissionReport_%SUBFILENAME%.app builds:Daxonet.BintangPackaging.CommissionReport\Release\%SUBFILENAME%_%CI_COMMIT_SHORT_SHA%_%CI_COMMIT_TAG%
+    - C:\rclone\rclone copy Daxonet.BintangPackaging.CommissionReport_%SUBFILENAME%.zip builds:Daxonet.BintangPackaging.CommissionReport\Release\%SUBFILENAME%_%CI_COMMIT_SHORT_SHA%_%CI_COMMIT_TAG%
+  when: manual
