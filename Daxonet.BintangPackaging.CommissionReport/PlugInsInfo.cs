@@ -43,12 +43,9 @@ namespace Daxonet.BintangPackaging.CommissionReport
             db.RegisterCommonSetupTable();
             db.RegisterTable("DaxIncentive", @"CREATE TABLE DaxIncentive(
             DocKey bigint not Null,
-			SalesAgent varchar(50) Null,
 			IncentiveFrom decimal(20,2) Null,
 			IncentiveTo decimal(20,2) Null,
-            TotalSalesReceived decimal(20,2) Null,
 			Percentage decimal(5,2) Null,
-            Incentive decimal(9,2) Null,
             CONSTRAINT [DaxIncentive_DocKey_PK] PRIMARY KEY CLUSTERED 
              (
              [DocKey] ASC
@@ -57,12 +54,9 @@ namespace Daxonet.BintangPackaging.CommissionReport
 
             db.RegisterTable("DaxCommission", @"CREATE TABLE DaxCommission(
             DocKey bigint not Null,
-			SalesAgent varchar(50) Null,
 			KPIFrom int Null,
 			KPITo int Null,
-            TotalPaymentReceived decimal(20,2) Null,
 			Percentage decimal(5,2) Null,
-            Commission decimal(9,2) Null,
             CONSTRAINT [DaxCommission_DocKey_PK] PRIMARY KEY CLUSTERED 
              (
              [DocKey] ASC
@@ -86,8 +80,8 @@ namespace Daxonet.BintangPackaging.CommissionReport
             AccessRightMap.AddAccessRightRecord(new AccessRightRecord("DAXONET_COMMISSION_REPORT", "", "Commission Report"));
             AccessRightMap.AddAccessRightRecord(new AccessRightRecord("DAXONET_COMMISSION_REPORT_MAINTENANCESETTING", "DAXONET_COMMISSION_REPORT", "Commission Report Setting"));
 
-            db.RegisterDecimalField("SalesAgent", "UDF_SalesTarget", "Sales Target", 2, 18);
-            //AutoCount.Report.AutoCountReport.RegisterReportType("Commission By Sales Agent Report", typeof(CommissionReportType));
+            //db.RegisterDecimalField("SalesAgent", "UDF_SalesTarget", "Sales Target", 2, 18);
+            AutoCount.Report.AutoCountReport.RegisterReportType("Commission By Sales Agent Report", typeof(CommissionReportType));
 
             //var myDBSetup = DBSetup.Create(e.UserSession.DBSetting);
             //if (!myDBSetup.SetupDatabase(Name))

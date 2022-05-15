@@ -846,6 +846,7 @@
     <Compile Include="_Plugin\FormSalesAgent.Designer.cs">
       <DependentUpon>FormSalesAgent.cs</DependentUpon>
     </Compile>
+    <Compile Include="_Plugin\NewReportType\CommissionReportCmd.cs" />
     <Compile Include="_Plugin\NewReportType\CommissionReportCriteria.cs" />
     <Compile Include="_Plugin\NewReportType\CommissionReportType.cs" />
   </ItemGroup>

@@ -29,8 +29,8 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.FromDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ToDay = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,8 +54,7 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.BtnPreview = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.previewButton1 = new AutoCount.Controls.PreviewButton();
             this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.BtnClose = new DevExpress.XtraEditors.SimpleButton();
             this.BtnInquiry = new DevExpress.XtraEditors.SimpleButton();
@@ -65,6 +64,7 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             this.FromDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.ucSalesAgentSelector1 = new AutoCount.Controls.FilterUI.UCSalesAgentSelector();
             this.panelHeader1 = new AutoCount.Controls.PanelHeader();
+            this.printButton1 = new AutoCount.Controls.PrintButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -165,13 +165,13 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.gridView2;
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.LevelTemplate = this.gridView3;
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.LevelTemplate = this.gridView2;
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.LevelTemplate = this.gridView3;
+            gridLevelNode4.RelationName = "Level2";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.gridControl1.Location = new System.Drawing.Point(2, 191);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -374,8 +374,8 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.BtnPreview);
-            this.panelControl3.Controls.Add(this.BtnPrint);
+            this.panelControl3.Controls.Add(this.printButton1);
+            this.panelControl3.Controls.Add(this.previewButton1);
             this.panelControl3.Controls.Add(this.BtnRefresh);
             this.panelControl3.Controls.Add(this.BtnClose);
             this.panelControl3.Controls.Add(this.BtnInquiry);
@@ -385,23 +385,14 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             this.panelControl3.Size = new System.Drawing.Size(954, 43);
             this.panelControl3.TabIndex = 5;
             // 
-            // BtnPreview
+            // previewButton1
             // 
-            this.BtnPreview.Location = new System.Drawing.Point(98, 6);
-            this.BtnPreview.Name = "BtnPreview";
-            this.BtnPreview.Size = new System.Drawing.Size(82, 29);
-            this.BtnPreview.TabIndex = 0;
-            this.BtnPreview.Text = "Preview";
-            this.BtnPreview.Click += new System.EventHandler(this.BtnPreview_Click);
-            // 
-            // BtnPrint
-            // 
-            this.BtnPrint.Location = new System.Drawing.Point(186, 6);
-            this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(84, 29);
-            this.BtnPrint.TabIndex = 1;
-            this.BtnPrint.Text = "Print";
-            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            this.previewButton1.Location = new System.Drawing.Point(98, 6);
+            this.previewButton1.Name = "previewButton1";
+            this.previewButton1.ReportType = "";
+            this.previewButton1.Size = new System.Drawing.Size(80, 29);
+            this.previewButton1.TabIndex = 0;
+            this.previewButton1.Preview += new AutoCount.Controls.PrintEventHandler(this.previewButton1_Preview);
             // 
             // BtnRefresh
             // 
@@ -495,6 +486,15 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
             this.panelHeader1.Size = new System.Drawing.Size(954, 55);
             this.panelHeader1.TabIndex = 0;
             // 
+            // printButton1
+            // 
+            this.printButton1.Location = new System.Drawing.Point(184, 6);
+            this.printButton1.Name = "printButton1";
+            this.printButton1.ReportType = "";
+            this.printButton1.Size = new System.Drawing.Size(86, 29);
+            this.printButton1.TabIndex = 5;
+            this.printButton1.Print += new AutoCount.Controls.PrintEventHandler(this.printButton1_Print);
+            // 
             // FormSalesAgent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -555,7 +555,7 @@ namespace Daxonet.BintangPackaging.CommissionReport._Plugin
         private DevExpress.XtraEditors.DateEdit FromDateEdit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit ToDateEdit;
-        private DevExpress.XtraEditors.SimpleButton BtnPreview;
-        private DevExpress.XtraEditors.SimpleButton BtnPrint;
+        private AutoCount.Controls.PreviewButton previewButton1;
+        private AutoCount.Controls.PrintButton printButton1;
     }
 }
